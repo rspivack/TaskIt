@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf140
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red29\green133\blue25;\red180\green0\blue98;\red77\green0\blue158;
+\red92\green38\blue153;\red46\green13\blue110;\red186\green0\blue17;\red68\green137\blue147;\red48\green111\blue121;
+}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\deftab866
+\pard\tx866\pardeftab866\pardirnatural
+
+\f0\fs36 \cf2 \CocoaLigature0 //\
+//  ViewController.swift\
+//  TaskIt\
+//\
+//  Created by Robert E Spivack on 10/28/14.\
+//  Copyright (c) 2014 Robert E. Spivack. All rights reserved.\
+//\
+\cf0 \
+\cf3 import\cf0  UIKit\
+\
+\cf3 class\cf0  ViewController: \cf4 UIViewController\cf0 , \cf4 UITableViewDataSource\cf0 , \cf4 UITableViewDelegate\cf0  \{\
+\
+    \
+    \cf3 @IBOutlet\cf0  \cf3 weak\cf0  \cf3 var\cf0  tableView: \cf4 UITableView\cf0 !\
+    \
+    \cf3 var\cf0  taskArray:[\cf5 Dictionary\cf0 <\cf5 String\cf0 ,\cf5 String\cf0 >] = []\
+    \
+    \cf3 override\cf0  \cf3 func\cf0  viewDidLoad() \{\
+        \cf3 super\cf0 .\cf6 viewDidLoad\cf0 ()\
+        \cf2 // Do any additional setup after loading the view, typically from a nib.\
+\cf0         \
+        \cf3 let\cf0  task1:\cf5 Dictionary\cf0 <\cf5 String\cf0 , \cf5 String\cf0 > = [\cf7 "task"\cf0 : \cf7 "Study French"\cf0 , \cf7 "subtask"\cf0 : \cf7 "Verbs"\cf0 , \cf7 "date"\cf0 : \cf7 "01/14/2014"\cf0 ]\
+        \
+        \cf3 let\cf0  task2:\cf5 Dictionary\cf0 <\cf5 String\cf0 , \cf5 String\cf0 > = [\cf7 "task"\cf0 : \cf7 "Eat Dinner"\cf0 , \cf7 "subtask"\cf0 : \cf7 "Burgers"\cf0 , \cf7 "date"\cf0 : \cf7 "01/14/2014"\cf0 ]\
+        \
+        \cf3 let\cf0  task3:\cf5 Dictionary\cf0 <\cf5 String\cf0 , \cf5 String\cf0 > = [\cf7 "task"\cf0 : \cf7 "Gym"\cf0 , \cf7 "subtask"\cf0 : \cf7 "Leg day"\cf0 , \cf7 "date"\cf0 : \cf7 "01/14/2014"\cf0 ]\
+        \
+        \cf8 taskArray\cf0  = [task1, task2, task3]\
+        \
+        \cf3 self\cf0 .\cf8 tableView\cf0 .\cf6 reloadData\cf0 ()\
+        \
+        \
+\cf2 //        println(task1["task"])\
+//        println(task1["date"])\
+\cf0         \
+    \}\
+\
+    \cf3 override\cf0  \cf3 func\cf0  didReceiveMemoryWarning() \{\
+        \cf3 super\cf0 .\cf6 didReceiveMemoryWarning\cf0 ()\
+        \cf2 // Dispose of any resources that can be recreated.\
+\cf0     \}\
+    \
+    \cf2 // UITableViewDataSource\
+\cf0     \
+    \cf3 func\cf0  tableView(tableView: \cf4 UITableView\cf0 , numberOfRowsInSection section: \cf5 Int\cf0 ) -> \cf5 Int\cf0  \{\
+        \
+        \cf3 return\cf0  \cf8 taskArray\cf0 .\cf5 count\cf0 \
+    \}\
+    \
+    \cf3 func\cf0  tableView(tableView: \cf4 UITableView\cf0 , cellForRowAtIndexPath indexPath: \cf4 NSIndexPath\cf0 ) -> \cf4 UITableViewCell\cf0  \{\
+        \
+        \cf6 println\cf0 (indexPath.\cf5 row\cf0 )\
+        \
+        \cf3 let\cf0  taskDict:\cf5 Dictionary\cf0  = \cf8 taskArray\cf0 [indexPath.\cf5 row\cf0 ]\
+        \
+        \cf3 var\cf0  cell: \cf9 TaskCell\cf0  = tableView.\cf6 dequeueReusableCellWithIdentifier\cf0 (\cf7 "myCell"\cf0 ) \cf3 as\cf0  \cf9 TaskCell\cf0 \
+        \
+        cell.\cf8 taskLabel\cf0 .\cf5 text\cf0  = taskDict[\cf7 "task"\cf0 ]\
+        cell.\cf8 descriptionLabel\cf0 .\cf5 text\cf0  = taskDict[\cf7 "subtask"\cf0 ]\
+        cell.\cf8 dateLabel\cf0 .\cf5 text\cf0  = taskDict[\cf7 "date"\cf0 ]\
+        \
+        \cf3 return\cf0  cell\
+    \}\
+ \
+    \cf2 //UITableViewDelegate\
+\cf0     \
+    \cf3 func\cf0  tableView(tableView: \cf4 UITableView\cf0 , didDeselectRowAtIndexPath indexPath: \cf4 NSIndexPath\cf0 ) \{\
+        \
+    \}\
+    \
+    \
+\}\
+\
+}
