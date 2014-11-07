@@ -53,6 +53,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let thisTask = taskArray[indexPath!.row]
             detailVC.detailTaskModel = thisTask
         }
+        else if segue.identifier == "showTaskAdd" {
+            let addTaskVC: AddTaskViewController = segue.destinationViewController as AddTaskViewController
+            addTaskVC.mainVC = self
+        }
         
         
     }

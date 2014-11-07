@@ -149,6 +149,9 @@
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="Zyu-xs-Idm" eventType="touchUpInside" id="5cS-ay-STR"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KdF-gq-Hep">
                                 <rect key="frame" x="31" y="83" width="280" height="30"/>
@@ -197,6 +200,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="dueDatePicker" destination="8Fk-wC-cgs" id="4YU-zL-QfE"/>
+                        <outlet property="subtaskTextField" destination="XOd-Dc-6KE" id="x2m-hs-JoA"/>
+                        <outlet property="taskTextField" destination="KdF-gq-Hep" id="B69-DS-zob"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="showTaskAdd" id="aee-qa-kvQ"/>
                     </connections>
                 </viewController>
