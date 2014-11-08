@@ -73,6 +73,7 @@
                     <connections>
                         <outlet property="tableView" destination="gh8-5t-7Du" id="IeZ-QS-KQV"/>
                         <segue destination="El1-nd-xCu" kind="show" identifier="showTaskDetail" id="R49-Lz-8sk"/>
+                        <segue destination="Zyu-xs-Idm" kind="presentation" identifier="showTaskAdd" id="rpo-Nn-nf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -203,12 +204,11 @@
                         <outlet property="dueDatePicker" destination="8Fk-wC-cgs" id="4YU-zL-QfE"/>
                         <outlet property="subtaskTextField" destination="XOd-Dc-6KE" id="x2m-hs-JoA"/>
                         <outlet property="taskTextField" destination="KdF-gq-Hep" id="B69-DS-zob"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showTaskAdd" id="aee-qa-kvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhe-NC-uaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1944"/>
+            <point key="canvasLocation" x="1179" y="1902"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="clR-hd-v4n">
@@ -229,7 +229,4 @@
             <point key="canvasLocation" x="507" y="1157"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="aee-qa-kvQ"/>
-    </inferredMetricsTieBreakers>
 </document>
