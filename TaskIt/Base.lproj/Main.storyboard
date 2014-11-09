@@ -120,7 +120,11 @@
                                 <action selector="cancelButtonTapped:" destination="El1-nd-xCu" id="R8o-iW-GV8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="B8R-S1-KyJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="B8R-S1-KyJ">
+                            <connections>
+                                <action selector="doneBarButtonItemPressed:" destination="El1-nd-xCu" id="L5G-lp-mGp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -164,7 +168,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-wC-cgs">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-wC-cgs">
                                 <rect key="frame" x="0.0" y="233" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="436641086.06563503">
                                     <!--2014-11-02 17:11:26 +0000-->

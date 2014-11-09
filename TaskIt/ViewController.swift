@@ -37,6 +37,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        println(task1["date"])
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+//        func sortByDate (taskOne:TaskModel, taskTwo:TaskModel) -> Bool {
+//            return taskOne.date.timeIntervalSince1970 < taskTwo.date.timeIntervalSince1970
+//        }
+//       
+//        taskArray = taskArray.sorted(sortByDate)
+// 
+// Instead of using function inside function, can do it all 'oneliner' using 'closure' syntax
+        
+        taskArray = taskArray.sorted{
+            (taskOne:TaskModel, taskTwo:TaskModel) -> Bool in
+            //comparison logic here
+            return taskOne.date.timeIntervalSince1970 < taskTwo.date.timeIntervalSince1970
+        }
+        
+        
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let thisTask = taskArray[indexPath!.row]
             detailVC.detailTaskModel = thisTask
+            detailVC.mainVC = self
         }
         else if segue.identifier == "showTaskAdd" {
             let addTaskVC: AddTaskViewController = segue.destinationViewController as AddTaskViewController
@@ -101,7 +127,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegueWithIdentifier("showTaskDetail", sender: self)
         
     }
+ 
     
+    //Helpers
+   
+   
     
 }
 
